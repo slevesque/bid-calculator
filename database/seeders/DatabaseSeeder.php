@@ -15,9 +15,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        $token = $user->createToken('API Token')->plainTextToken;
+
+        echo PHP_EOL . PHP_EOL;
+        echo '########################################################################' . PHP_EOL . PHP_EOL;
+        echo 'API TOKEN:    ' . $token . PHP_EOL . PHP_EOL;
+        echo '########################################################################' . PHP_EOL;
     }
 }

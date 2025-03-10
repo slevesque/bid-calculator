@@ -34,5 +34,8 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'bid_calculator' => [
+        'endpoint' => env('BID_CALCULATOR_API_ENDPOINT', 'http://localhost/api/bid-calculator/calculate'),
+        'key' => env('BID_CALCULATOR_API_KEY'),
+    ],
 ];
